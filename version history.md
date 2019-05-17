@@ -1,5 +1,37 @@
 # JELLY FACTORY VERSION HISTORY
 
+## v0.3.0
+May 17, 2019
+
+This is a small minor release. It adds a new gameplay feature: burner. It also has dozens of new levels created before and after TCAF, some using the new mechanic.
+
+Level design will continue to be the focus, but 
+
+1. finishing up Linux and Android version
+2. fiddling around with graphics (messing with light and normals to have more clearly defined diffuse and specular) 
+3. implementing title and world/level selection screen
+
+are all in works as well.
+
+### New features
+* New gameplay mechanic: burner (actual name/graphics pending). It destroy jellies that step on it.
+* As a consequence of burner, coconut code had to be changed:
+    - Burner can fragment a single coconut chunk into a multiple chunks.
+    - More than 10 chunks of coconuts can now be specified in a level. Thanks to the 4 Colour Theorem, you can specify any levels with coconut you want.
+    - Coconut chunk index is kept tracked by the jelly control module.
+    - Coconut chunk index is kept tracked by the history.
+    - Coconut rendering is now O(1) instead of O(N) in terms of number of coconut chunks.
+    - Coconut movement is now O(1) instead of O(N) in terms of number of coconut chunks.
+* Couple dozen new levels!
+* Added fullscreen (F11) and save-wipe (F8) button.
+* Individual OpenGL calls can be logged for debugging (mostly added to figure out the Linux version crash). Press F1 to dump all OpenGL calls for a frame. Add "debug:\n  openGL_startup: true" to the config file to dump all OpenGL calls at startup.
+    
+###Changes/Bug fixes
+* Adjusted camera zoom logic to behave better. Added camera_correction field to level yaml.
+* Fixed a bug where pressing a direction button on the frame when jellies arrive at an integral coordinate buffers the input twice.
+* Fixed a bug where hovering over a button with a mouse prevents the hotkey from working.
+* Fixed a bug where having trailing whitespaces in the last row of blocks or goals of a level gave incorrect error message.
+
 ## v0.2.1
 April 30, 2019
 

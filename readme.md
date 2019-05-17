@@ -1,5 +1,14 @@
 # Jelly Factory Alpha Releases
 
+## v0.3.0
+May 17, 2019
+
+[Windows x86](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.3.0/Jelly.Factory.v0.3.0.x86.rar)
+
+[Windows x64](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.3.0/Jelly.Factory.v0.3.0.x64.rar)
+
+[SUPER EXPERIMENTAL Linux](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.3.0/Jelly.Factory.v0.3.0.linux.rar)
+
 ## v0.2.1
 April 30, 2019
 
