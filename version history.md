@@ -26,7 +26,7 @@ are all in works as well.
 * Added fullscreen (F11) and save-wipe (F8) button.
 * Individual OpenGL calls can be logged for debugging (mostly added to figure out the Linux version crash). Press F1 to dump all OpenGL calls for a frame. Add "debug:\n  openGL_startup: true" to the config file to dump all OpenGL calls at startup.
     
-###Changes/Bug fixes
+### Changes/Bug fixes
 * Adjusted camera zoom logic to behave better. Added camera_correction field to level yaml.
 * Fixed a bug where pressing a direction button on the frame when jellies arrive at an integral coordinate buffers the input twice.
 * Fixed a bug where hovering over a button with a mouse prevents the hotkey from working.
