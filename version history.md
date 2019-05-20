@@ -1,5 +1,14 @@
 # JELLY FACTORY VERSION HISTORY
 
+## v0.3.1
+May 19, 2019
+
+### Changes/Bug fixes
+* F11 fullscreen button is tentatively changed to only change window size and position to fake a fullscreen. This button doesn't even do borderless change and it must be set in F4 > Mown > Config. I just hate that fullscreen situation in Windows is worse than horrific.
+* Frame drop logging can be relaxed in the configuration.
+* Level loader now checks whether the block layer and the goal layer specified the same walls. Failing to do so was breaking checkerboard floor pattern in "TCAF bonus Poke" level.
+* glEnable(GL_MULTISAMPLE) is gone. OpenGL ES 2.0 does not support that enum.
+
 ## v0.3.0
 May 17, 2019
 
