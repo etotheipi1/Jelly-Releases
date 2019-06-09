@@ -1,5 +1,47 @@
 # JELLY FACTORY VERSION HISTORY
 
+## v0.4.0
+June 9, 2019
+
+Most noticable change is the look of the jellies. Adjustment to lighting and normal were made, and jiggle physics was implemented to sell the "jelliness". Android builds are now playable again.
+
+Next focus is to work on title screen and world/level selection screens, and the associated meta puzzles. I'll also spend time on smoothing out the experience on Android. Level editor has been requested by some people, so I'm adding that as well.
+
+### New features
+* There was a second major aethetics pass on the look of jellies.
+    - Lighting has been changed to directional from point.
+    - Normals have been angled at jelly borders to create more distinct diffuse and specular.
+    - Materials have been adjusted to fit better with these changes.
+    - Normal offset textures are applied in order to avoid artifacts arising from the inevitable diagonal asymmetry of triangulation of jelly mesh.
+* Jiggle physics have been added to jellies.
+    - Jelly jiggles randomly on level start, reset, undo.
+    - Smilies put jiggling force on itself when it attempts to move, even when it cannot move.
+    - Jiggles propagate to neighbouring jelly blocks.
+    - Jiggling is exaggarated on eyes.
+    - Mown Engine now has a pseudorandom number generator. It uses a multiply-with-carry generator. It is able to pass TestU01. RNG is used to generate jiggles.
+* Android build has been released, although the experience here is far from ideal yet.
+    - Current control is to gesture a direction. Keep holding to continue moving in the same direction.
+    - Android back button is bound to back button in jelly.
+    - Save file location is moved to a proper place. It is "C:\Users\{YourUserName}\AppData\Roaming\drhee\jelly\" on Windows, "/home/{YourUserName}/.local/share/drhee/jelly/" on Linux, and "/data/data/org.libsdl.app/files/" on Android. Org name and app name will likely change in the future.
+    - Proper shutdown sequence of modules and SDL is executed now, to appease Android.
+    - For now, UI scaling exists, but is very preminary.
+* This versions includes 19 new levels that were made by friends for a puzzle party on June 9.
+
+### Changes/Bug fixes
+* "Sheared edge" marching square case generated wrong border mesh. This is fixed.
+* File saving implementation has changed from using cstuio's FILE to using SDL2's SDL_RWops.
+* Fixed a bug where input buffer carried one move over to the next level.
+* Fixed a bug where YAML serializer did not treat whitespace correctly if a dictionary was an entry of a list.
+* Fixed a bug where setting a value of Mown dictionary with an existing key ended up with duplicate entry (can't believe this bug stayed undetected this far!)
+* Fixed a bug where a Mown dictionary with exactly 5<<N entries did not insert the last entry (somehow my container tests missed this!)
+
+### Known issues/bugs
+* I'm having an enormous difficulty setting up Linux on my machine to run GPU accelerated programs. It seems to be a driver issue I just cannot resolve. As a result, the quality of the Linux version is still not clear.
+* Android version is still very priminary and has many problems, which will be addressed with high priority.
+    - Every other run of the Android build results in a crash. Some state from OpenGL context is persisting, even though I am destroying the context.
+    - Touch release is sometimes not registered on buttons.
+    - Sound playback is delayed.
+
 ## v0.3.1
 May 19, 2019
 
