@@ -1,5 +1,56 @@
 # JELLY FACTORY VERSION HISTORY
 
+
+## v0.5.0
+August 25, 2019
+
+This is the biggest minor release yet. This version has hundreds of new levels, a whole new structure and mechanics for navigation between levels and meta puzzles, a level editor built for shipping, and graphics update on top of that.
+
+Next focus is to do another pass on graphics: environment design, burner graphcis, new goal sprites, experimenting with shadows and reflections, and so on. Marketing will be another focus. This includes finalizing the name of the game, making an announcement trailer, Steam page, website, social media accounts etc.. More levels will be continued to be made and tuned as well.
+
+### New Features
+* Temporary level selection screen is out and meta level structure is in!
+    - Progress through the game by solving child puzzles and thawing licorice blocks.
+    - Level solve no longer takes you back automatically. You can review the level from here by undoing without losing progress.
+    - Camera can now zoom in and move around with your jelly. They only work in meta-levels with single strawberry smilies.
+* Over 100 new and updated levels!
+    - Elyot made levels throughout June and July at a constant pace, contributing nearly hundred levels.
+    - I also made dozen or so levels.
+    - There are also some new meta levels.
+* A level editor has been added
+    - Press F6 to enter the editor from any levels
+    - Blocks and tiles can be placed using pencil and rectangle tool.
+    - Levels can be resized simply by drawing/deleting blocks/tiles.
+    - Implemented mouse picking.
+    - Editor has its own camera logic. Mouse scroll to zoom in and out. Space+left mouse or middle mouse to pan. Direction keys to move the camera.
+    - Child levels can be added or deleted within the editor using the third tool.
+    - There is no copy/paste as of yet. I might add this later.
+* More graphics update!
+    - Dynamic point light sources have been implemented. You can play with them using F4 > Jelly > Lighting.
+    - Point lights are also used in level doors. Lights on unsolved doors pulse.
+    - Floor and walls are now using color and normal textures.
+    - Lighting and materials have been tuned again to fit with these changes.
+
+### Changes/Bug fixes
+* Changed name of the game to "Jelly is Sticky". I think this is the name that sticks with me the best so far.
+* Removed the restriction on the number of smilies. Keeping track of number of smilies got tiring with the addition of the editor so I just got renderer to handle arbitrary number of eyes.
+* Changed the behavior of input buffer. Instead of storing long sequence of buffered inputs, it now only stores one future directional input, which gets overwritten if another input is made.
+* Above change also happens to fix a critical bug that crashed the game immediately when more than 256 directional inputs were buffered.
+* Changed behavior of mouse interaction with UI. Only one UI can receive mouse input, and that input gets intercepted so that it doesn't leak below to gameplay code.
+* Added user facing error messages. Try pressing options menu in the title screen to see this. Same system is also used to congratulate players when a level is solved.
+* Undo history stack is taking up little more memory than the last version for half the size, because game state now comprises many more things to support editor undo. I'm thinking of adding compression later, but I need to farm usage data (just from myself) to build an offline Huffman tree.
+* Fixed a bug where inverse of 4x4 matrix was transposed (this code had no coverage before mouse picking, so it wasn't tested well).
+* Fixed a bug where jelly jiggle speed did not get preserved on the frame when jelly crossed the marching square transition threshold.
+* Jelly movement code has been completely refactored as I added the editor. It is now much more defensively coded. The old code may have had potential to crash with an extremely long frame (like in seconds) although it might have been fine.
+* Draw calls that contain zero triangles are no longer sent to GPU.
+* YAML token limits have increased to 16384.
+
+### Known issues/bugs
+* Text UI component leaks memory whenever a new text is assigned. One could make the Mown allocator panic (thus crashing the game) by adversarially repeating certain inputs for an hour.
+* The square licorice unthawing "dock" shows rendering artifact when moving.
+* Jellies can intersect due to jiggle. This wasn't much of an issue before, but it is now very apparent when moving up against licorice.
+* Level editor sometimes have trouble keeping coconut blocks intact. Draw it over again as a temporary fix.
+
 ## v0.4.0
 June 9, 2019
 
