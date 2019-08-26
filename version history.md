@@ -1,5 +1,20 @@
-# JELLY FACTORY VERSION HISTORY
+# JELLY IS STICKY VERSION HISTORY
 
+## v0.5.1
+August 26, 2019
+
+### Changes/Bug fixes
+* Door and wire power up with animation at level begin when coming out of a fresh solve.
+* Added a new world for footage shooting.
+* Replaced the first meta puzzle.
+* Changed behavior of UI when a level is solved. It now asks you in a modal whether to continue or stay.
+* Loading a save now places you back at the door you entered last in the overworld.
+* Fixed a bug where jelly geometry intersected when moving against another jelly due to jiggling.
+* Fixed a bug that made level preview sizing and positioning weird with UI scaling.
+* Fixed a bug that introduced one frame of delay for level preview positioning and content.
+* Fixed a wrong mesh in one of the marching square cases.
+* Fixed a bug where editor lost track of coconut index if a fruit goal was drawn below.
+* Renamed the release file name to "Jelly is Sticky" as well
 
 ## v0.5.0
 August 25, 2019

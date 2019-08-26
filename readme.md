@@ -1,4 +1,15 @@
-# Jelly Factory Alpha Releases
+# Jelly is Sticky Alpha Releases
+
+## v0.5.1
+August 26, 2019
+
+[Windows x86](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.5.1/Jelly.is.Sticky.v0.5.1.x86.rar)
+
+[Windows x64](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.5.1/Jelly.is.Sticky.v0.5.1.x64.rar)
+
+[EXPERIMENTAL Linux](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.5.1/Jelly.is.Sticky.v0.5.1.linux.rar)
+
+[EXPERIMENTAL Android](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.5.1/Jelly.is.Sticky.v0.5.1.android.apk)
 
 ## v0.5.0
 August 25, 2019
