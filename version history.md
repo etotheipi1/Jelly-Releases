@@ -1,5 +1,33 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.5.2
+November 1, 2019
+
+This is a minor release for the Indie Megabooth submission. Some features (such as postprocessing) I'm working on for v0.6 is turned off for the time being.
+
+### New Features
+* Particle effect has been implemented.
+    - Color interpolation in CIELCH color space have been implemented.
+    - Particle spawn position/speed/size/lifespan distribution, acceleration, default emission rate and color tint gradient can be adjusted during run-time at F4 > Mown > Particles.
+    - Particle system is still work in progress, and is only used for doors at this moment.
+* Postprocessing has been implemented.
+    - The whole scene is now rendered with HDR.
+    - Multisampling has been enabled for postprocessing.
+    - Tone mapping has been implemented and its parameters can be adjusted in F4 > Mown > Graphics.
+    - In order to use postprocessing, Jelly now requires OpenGL ES 3.1 instead of 2.0. Renderer fall-back has not been implemented yet.
+    - Postprocessing is disabled in the configuration, as this feature is not well tested yet. To try it out, edit postprocess_fragment.glsl and config_default.yaml.
+
+### Changes/Bug fixes
+* Meta level structures have been completely revamped.
+* Number of levels in the main game have been adjusted based on feedback.
+    - "Middleman" and "Get in There!" have been removed from the main game.
+    - "Moving Walls" and "Move Over" have been changed.
+    - "Three Sticks" and "Fat Coconut" have been added to the main game.
+* There is a new level pack, which is the collection of all old and rejected levels.
+* Wire power up now accelerates and guarantees completion within constant time.
+* Level preview no longer pops up right after exiting from a level.
+* Culling has been implemented for rendering performance on large levels.
+
 ## v0.5.1
 August 26, 2019
 
