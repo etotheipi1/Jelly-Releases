@@ -1,5 +1,23 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.5.3
+November 5, 2019
+
+There is a major game mechanic change that we are trying out. Blue jelly no longer sticks to orange jelly.
+
+### Changes/Bug fixes
+* Blue jelly no longer sticks to orange. Most levels have been adjusted to reflect this change.
+* Many levels were re-balanced:
+    - "Replace" has been made easier and is now called "Knead".
+    - "Orange is Very Sticky" has been changed and is now called "Orange is Super Sticky".
+    - "Expand", "Dig it Out", "Four Point Turn" has been made easier.
+    - "Shear" has been made harder.
+    - "Poke" and "Breakup" have been swapped.
+    - Added walls for "French Curve" and "Keep it Alive".
+* Camera zoom level is now consistent across different resolutions.
+* Jelly lighting has been adjusted for dark levels, so that it is easier to tell them apart.
+* Square bracket level browsing is back for testing purposes.
+
 ## v0.5.2
 November 1, 2019
 
