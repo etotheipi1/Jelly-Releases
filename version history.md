@@ -1,5 +1,68 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.6.0
+January 1, 2020
+
+This is a minor release including a polishing pass on the level editor, jiggle physics, and movement code. Various meta levels have been adjusted and so did the curation of main levels. It also includes tons of small bug fixes. Postprocessing is delayed until the next minor release.
+
+### New Features
+* You can now fly in meta levels to cheat. Press F7 to toggle flying. Your jelly will go over walls and other jellies, and not stick to anything.
+* Added a new tool in the level editor that allows you to quickly duplicate or delete row/columns. The hotkey '4' is bound to this tool.
+* Added a button for entering editor screen for child level (before this patch, you had to leave the parent editor screen, move your jelly to the door, enter the child level, and then press F6 to enter this screen).
+* Hotkey has been added to a few palette buttons:
+    - 'R' for **r**ed strawberry jelly
+    - 'B' for **b**lue grape jelly
+    - 'Y' for **y**ellow orange jelly
+    - 'C' for **c**oconut jelly
+    - Press tab to switch to wall palette. If the wall palette is already selected, pressing tab switches the palette to floor tile.
+* Jelly jiggle physics has been revamped.
+    - Different jelly type have different jiggle parameters now.
+    - Clicking on a jelly causes it to jiggle.
+    - Orange jelly can be visually seen to be stuck to other sticky jelly.
+    - Jellies now jiggle even when they fail to move but receives "pressure" from a controllable jelly.
+    - Jelly jiggling propagation is now more physically accurate and behaves better than the hackier version before.
+    - Jiggle force behavior when jellies start/attempt moving has changed to affect speed instead of position.
+    - Straight edge jiggling behavior is changed so that the animation is continous even when marching square division changes.
+* Restored grape-orange stickyness. Reverted all relevant levels.
+* Added logging for entering/solving/editing level with timestamp (relative to when game started).
+
+### Changes/Bug fixes
+* If pencil tool is drawing coconut and started its drawing on top of an existing coconut, it now extends that coconut instead of overwriting it with a new coconut chunk.
+* Deleting a blank cell with a wall pencil draws tiles.
+* New level/rename level modal window now places focus on title textfield on open.
+* Rename level modal window now populates the title textfield with the current title.
+* Selecting a palette item changes tool to pencil if the current tool is 3 or 4.
+* Pressing R in a meta level no longer brings up the level preview screen if the player started on a door.
+* Android swipe input has been made slightly more sensitive.
+* Added two more levels to the recycling bin (Minichess and Counting Gadget) because it was missing.
+* Added test levels for lateral jiggling and power branching.
+* Yellow-blue stickiness can now be toggled under F4 > Jelly > Control.
+* Movement input buffer has been expanded back to hold 4 inputs.
+* Buffered input now smoothly continue the last movement without staggering.
+* Added logging for detecting unreachable levels.
+* Fixed a bug where if you paint over a jiggling jelly with a wall, the wall gets the jiggling parameters and thus shows up with curved edges.
+* Fixed a bug where if you solve a child puzzle, come out, and go into the editor, it loads the controllable jelly at the door.
+* Fixed a bug where power-up sound played briefly even though it powered no power line.
+* Fixed a bug where power-up sound played perpetually if the player left the level while the power-up animation is happening.
+* Fixed a bug where pressing "enter" button made noise even when not standing on a door.
+* Fixed a bug where pressing F6 on "solved" screen got one in the level editor but did not clear the "solve modal", so upon selecting "stay" one could control the jellies within the editor.
+* Fixed a bug where the door enter input was dropped if the jelly was more than half cell away to the door.
+* Fixed a bug where the door enter input was dropped in the time period of 150ms between arriving at a cell and level preview showing.
+* Fixed a bug where the door color was sometimes incorrectly showing red on level preview.
+* Fixed a bug where edit button in the editor preview did not account for changes made since last save.
+* Fixed a bug where the configuration of multiple door powering a same set of wires would result in all doors turning green when one of the child level is solved.
+* Fixed a bug where if you buffer a single movement input on the frame when jelly arrives at a cell, it moves twice.
+* Fixed a bug where movement input was dropped during wire powering up.
+* Fixed a bug where one could enter a level during wire powering up.
+* Fixed a bug where cliprect didn't update when the game window size was changed in the level editor.
+* Fixed a bug where middle mouse panning in the level editor on top of level preview had the camera jumping unpredictably.
+
+
+### Known issues/bugs
+* Jiggling system change brought out some problems in the marching square rendering and some discontinuity can be felt. Fixing these unsmooth animations is high on my todo list.
+* Camera still jumps unpredictably if middle mouse panning is triggered on top of UI buttons. I understand the behavior but I haven't found an elegant fix yet.
+* Placing more than 32 doors in one level crashes the editor.
+
 ## v0.5.3
 November 5, 2019
 
