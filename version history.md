@@ -1,5 +1,20 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.6.1
+January 2, 2020
+
+### Changes/Bug fixes
+* Various level design/curation changes were made:
+    - Mashup, Stag and Doe, Tetrominoes, Leash was given more room for maneuver.
+    - Repel was given less room.
+    - Deform, Pancake Die was iterated on.
+    - Pick and Choose was renamed to Multiple Choice. Katamari was renamed to Cluster.
+    - Orange levels were reordered.
+    - Four more bonus levels from Elyot!
+* Unreachable levels have been deleted from the main level file.
+* Log is now appended to the existing log file, instead of overwriting it.
+* Fixed a bug where entering editor screen for child level of Courtyard from Courtyard applied Courtyard lighting to the child level.
+
 ## v0.6.0
 January 1, 2020
 
