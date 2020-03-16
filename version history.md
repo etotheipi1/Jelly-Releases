@@ -1,5 +1,31 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.7.0
+March 16, 2020
+
+This minor release adds various graphical effects such as HDR, bloom, depth of field, and shadow mapping.
+
+### New Features
+* Postprocessing implementation has been completed.
+    - Postprocessing works with multisampling.
+    - Postprocessing works with screen resizes.
+    - High dynamic range is implemented.
+    - Bloom is implemented.
+    - Fake depth of field is implemented. It doesn't actually measure the depth, but approximates it based on screen position.
+* Shadow mapping has been added.
+* Frame buffers can be viewed in the ImGui dev tool.
+* State in meta levels are saved even after entering and leaving decendent levels.
+* Snap zoom feature has been added: some "rooms" has fixed camera.
+
+### Changes/Bug fixes
+* Jelly jiggle behaves more smoothly under low frame rate.
+* Various lighting constants have been tuned.
+
+### Known issues/bugs
+* Adding postprocessing has made the performance quite worse. I'll be working on optimizations soon.
+* Shadow map currently has a depth test issue, which results in wrong shadow in some corners.
+* Postprocessing has not been tested on Android, so it is turned off in Android version.
+
 ## v0.6.2
 January 5, 2020
 
