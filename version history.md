@@ -1,5 +1,11 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.7.2
+March 17, 2020
+
+## Changes/Bug fixes
+* Depth of field strength was reduced. It is tweened down on level entry.
+
 ## v0.7.1
 March 17, 2020
 
