@@ -1,5 +1,15 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.7.1
+March 17, 2020
+
+## Changes/Bug fixes
+* Shadow map depth test issue has been fixed.
+* Shadow map has been slightly expanded to always cover everything in view.
+* Added a color grading step for postprocessing.
+* More lighting constants have been tuned.
+* Got rid of the snap zoom from the main level.
+
 ## v0.7.0
 March 16, 2020
 
