@@ -1,15 +1,21 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.7.3
+March 19, 2020
+
+### Changes/Bug fixes
+* Fixed a bug where pressing reset twice blanks the level state.
+
 ## v0.7.2
 March 17, 2020
 
-## Changes/Bug fixes
+### Changes/Bug fixes
 * Depth of field strength was reduced. It is tweened down on level entry.
 
 ## v0.7.1
 March 17, 2020
 
-## Changes/Bug fixes
+### Changes/Bug fixes
 * Shadow map depth test issue has been fixed.
 * Shadow map has been slightly expanded to always cover everything in view.
 * Added a color grading step for postprocessing.
