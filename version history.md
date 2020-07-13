@@ -1,5 +1,32 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.8.0
+July 13, 2020
+
+This minor release finishes nearly all graphical implementations needed before shipping. It also adds meta mechanics such as recursing levels and 100% completion stars.
+
+### New Features
+* Burner graphics has been added. It is depicted as a lava pool, with scrolling Perlin texture and particles.
+* Vertical jiggling added. Jelly mesh can be squizzed vertically on click, drop, and movement. Normal is not modified yet.
+* Added animation where jellies drop when levels begin.
+* Added various animations for eyes.
+* Meta mechanics have been added:
+    - Meta state is now remembered based per level, not stack, which is a relevant distinction for recursive levels.
+    - Meta levels now keep track the entering smiley, instead of red-eyed smiley. Spawn floor type has been added, along with various error checks regarding loading, saving, entering, leaving, and editing.
+    - 100% completion star added. 100% completion wire power added.
+    - Editor functions to support recursing levels and stars have been added.    
+* A world for demonstrating meta mechanics have been added.
+
+### Changes/Bug fixes
+* Fixed a bug where the level preview was showing a wrong level if 1) entered the level editor 2) new level was assigned to a door 3) new level was entered within the editor 4) player got back to playing in the new level 5) and came back to the new level.
+
+### Known issues/bugs
+* Meta mechanic implementation is still in flux and still in develoment. There are known corner cases that feels wrong.
+* Z-ordering on jellies are sometimes wrong when drop happens.
+* Multi-resolution screenshot test is broken since postprocessing was introduced.
+* Framerate can be low. Next minor version should have huge improvement on performance.
+* Supporting undo for meta operations (entering and leaving doors) was planned but didn't make it in time.
+
 ## v0.7.3
 March 19, 2020
 
