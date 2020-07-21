@@ -1,5 +1,16 @@
 # Jelly is Sticky Alpha Releases
 
+## v0.8.1
+July 20, 2020
+
+[Windows x86](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.8.1/Jelly.is.Sticky.v0.8.1.x86.rar)
+
+[Windows x64](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.8.1/Jelly.is.Sticky.v0.8.1.x64.rar)
+
+[EXPERIMENTAL Linux](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.8.1/Jelly.is.Sticky.v0.8.1.linux.rar)
+
+[EXPERIMENTAL Android](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.8.1/Jelly.is.Sticky.v0.8.1.android.apk)
+
 ## v0.8.0
 July 13, 2020
 

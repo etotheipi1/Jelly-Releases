@@ -1,5 +1,24 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.8.1
+July 20, 2020
+
+### Changes/Bug fixes
+* Meta mechanics went through a design iteration:
+    - Meta state is reverted to be remembered based per stack, for now.
+    - "Get to the left" is no longer solvable with the new rule and is deleted.
+    - Fixed a bug with 100% completion star, where it could spawn arbitrary number of jellies.
+* Fixed a bug that crashed the game when the level editor was entered in 64-bit version.
+* In the shape where three burners in a bent trinomino forming a square with a wall, burner now continues below the rounded corner of the wall.
+* Added minimum time between two jelly fragments dropping.
+* Minor change to "Worm yet again" bonus level.
+* Fixed a bug that disabled level intro animation for all levels.
+* Fixed a bug where changing size of a level in the editor broke spawn location.
+* Fixed a bug that skipped jelly drop simulation on the first frame, resulting in synced drop for all jelly fragments dropped in the same frame.
+
+### Known issues/bugs
+* Preview is sometimes showing some jellies darker.
+
 ## v0.8.0
 July 13, 2020
 
