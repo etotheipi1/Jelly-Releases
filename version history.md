@@ -1,5 +1,26 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.9.0
+August 2, 2020
+
+This minor release adds a few more graphical improvements that were missed in the last version.
+
+### New Features
+* Shadows are now colored.
+* Glitters have been added to jellies.
+* Mouth and mouth animation added.
+* Jelly has varying transparency depending on its z-jiggle.
+* Vignette postprocessing has been added.
+
+### Changes/Bug fixes
+* Wall are jellies now! They jiggle on start, push, and click.
+* Added 'More Bonus Levels' world with ~50 more levels.
+* Some bonus levels have been minorly adjusted.
+* Bloom performance has been improved by making the convolution kernel bigger and reducing the number of pingpong blur iterations.
+* Face animation no longer initiates if the player is moving jellies around.
+* Face animations have been adjusted.
+* Fixed a bug that prevented saving a level from editor sometimes.
+
 ## v0.8.1
 July 20, 2020
 
