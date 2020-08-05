@@ -1,5 +1,20 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.9.1
+August 5, 2020
+
+### Changes/Bug fixes
+* Glitters are turned off for the time being. It will be back later!
+* Pot lights are added.
+* Fake caustics are added.
+* Various rendering parameters and material colors are adjusted.
+* Holding shift lets you run.
+* In-game UI texts are changed from black to white.
+* Fixed a bug with the jelly drop delay calculation.
+* Fixed a bug where walls did not jiggle on impact.
+* Fixed a bug where animation trigger probability was biased in the wrong way for levels with more faces.
+* Fixed a bug that generated wrong wall normals on edges.
+
 ## v0.9.0
 August 2, 2020
 
