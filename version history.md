@@ -1,5 +1,20 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.9.2
+August 29, 2020
+
+## Changes/Bug fixes
+* Builds are now shipped as zip file for Windows and tar file for Linux, instead of using rar for both platforms.
+* Glitter can now have texture. This is turned off by default. Glitter geometry is automatically culled and sorted when the parameters are adjusted.
+* Potlight shaders were adjusted for all shaders and hooked with ImGUI.
+* Time uniform variable is passed to shaders.
+* Floor tile color was adjusted.
+* In-game UI texts were reverted back to black.
+* Level data list was moved from heap to stack.
+* Converting a leaf level into a meta level in the editor automatically adds a spawn tile if it was not added.
+* Fixed a bug where meta state incorrectly behaved when child level was entered within the editor, potentially resulting in crash.
+* Fixed a bug where camera flinched in meta level with multiple controllables if the player jelly block moves against a wall.
+
 ## v0.9.1
 August 5, 2020
 
