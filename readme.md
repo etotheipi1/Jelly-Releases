@@ -1,5 +1,16 @@
 # Jelly is Sticky Alpha Releases
 
+## v0.10.0
+December 18, 2020
+
+[Windows x86](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.10.0/Jelly.is.Sticky.v0.10.0.x86.zip)
+
+[Windows x64](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.10.0/Jelly.is.Sticky.v0.10.0.x64.zip)
+
+[EXPERIMENTAL Linux](https://github.com/etotheipi1/Jelly-Releases/releases/download/v0.10.0/Jelly.is.Sticky.v0.10.0.linux.tar.gz)
+
+Android build is missing, because my phone is dead and I can't test the build.
+
 ## v0.9.2
 August 29, 2020
 

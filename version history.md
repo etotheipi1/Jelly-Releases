@@ -1,9 +1,43 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.10.0
+December 18, 2020
+
+This minor release completely refactors all of mesh and rendering code, while fixing all major bugs and improving performance, in preparation of the game's release in the spring of next year.
+
+### Changes/Bug fixes
+* Jiggle grid has been refined from 1x1 per block to 4x4 per block.
+* Jelly meshes have correct geometry and normals, instead of faking it with flat geometry and normal patching textures.
+* Jelly meshes have been redesigned with spatial continuity, temporal continuity, jiggle distortion, and GPU culling in mind. Jelly meshes are finer, allowing us to reflect the finer jelly jiggles.
+* Jelly meshes are generated from auto-generated code, allowing us to do marching squares D_4 transformation offline in order to simplify the rendering code and improve performance.
+* Jelly meshes' back faces are culled in GPU instead of CPU.
+* Jelly mesh vertices go through only one pass of processing, instead of going through separate geometry, jiggle, marching square transformation, jelly movement transformation pass.
+* Vastly improved jelly mesh indices processing speed, which has been one of the biggest performance bottleneck.
+* Jelly meshes, glitters, eyes are correctly z-ordered using dependency resolving/batching system. This is essential, because most of what's drawn on screen is transparent unlike other games.
+* Level meshes are cached and generated only once at the beginning of the level.
+* Jelly meshes are generated only once per frame, instead of repeating the work for the shadow map.
+* Often used OpenGL state values are cached.
+* Shader uniform positions and values are cached. Combined with above, we reduced number of GPU calls by one order of magnitude.
+* Every shader has been refactored in order to organize the uniform variables. Mown shaders have been migrated to use the new uniform handling system.
+* Shaders are now parsed before build and their corresponding C++ code is auto-generated.
+* Vertex and index buffers are now hinted with GL_DYNAMIC_DRAW instead of GL_STREAM_DRAW to better indicate their use.
+* Jelly materials are unified into one part, instead of having separate top, border, side materials.
+* Optimized bloom postprocessing for performance.
+* Fixed a editor bug that corrupted meta state if a child level was made in the editor, played, and popped out to the original level.
+* Fixed a bug where title screen background would be dark sometimes.
+* Lighting parameters were adjusted.
+* Removed all unused assets from the build.
+
+### Known issues/bugs
+* "Touching corners" marching square case needs additional work, so that jellies merge quicker on corner contact.
+* If a wall block has rounded convex corner in exactly two corners that are diagonally apart, quarter floor piece is not generated below the corner closer to north.
+* If there are more than 372 jelly faces in a view, excess will not be drawn.
+* Some large test cases such as filled 62x62 do not render fully. However, this kind of extreme condition (more than ~500K vertices of jelly) is not going to be met for any reasonable level.
+
 ## v0.9.2
 August 29, 2020
 
-## Changes/Bug fixes
+### Changes/Bug fixes
 * Builds are now shipped as zip file for Windows and tar file for Linux, instead of using rar for both platforms.
 * Glitter can now have texture. This is turned off by default. Glitter geometry is automatically culled and sorted when the parameters are adjusted.
 * Potlight shaders were adjusted for all shaders and hooked with ImGUI.
