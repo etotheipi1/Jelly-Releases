@@ -1,5 +1,81 @@
 # JELLY IS STICKY VERSION HISTORY
 
+## v0.10.5
+Febraury 3, 2021
+
+### Changes/Bug fixes
+* Fullscreen setting has been added.
+* Finalized demo levels.
+* Options UI has been added to Mown UI.
+* Fixed potlight artifact.
+* Raised jelly height from 0.4 to 0.5.
+* Unhooked door error message was customized for demo build.
+* Error power color was adjusted to work with HDR.
+* Fixed a bug where game camera cliprect didn't update on window resize if the settings menu is opened.
+
+### Known Issues
+* Hitting ESC multiple times on the win screen messes up the UI state.
+* Using resize tool in the editor does not resize the deco layer.
+
+## v0.10.4
+February 1, 2021
+
+### Changes/Bug fixes
+* Settings menu has been added, where only sound settings are functional for now. "Back to parent level" button has been remapped to B, since the settings menu is now bound to the escape key.
+* Title menu has been redesigned to accomodate the settings menu change.
+* Slider UI component has been added to Mown UI.
+* Control group has been added to Mown UI.
+* Main level structure has been slightly altered. Top level with JELLY spelled out has been removed and the player now starts on the Courtyard instead. The level "Bend" has been replaced with 4 tutorial levels + the new title card level. This deletes a few challenging levels that were the direct decendent of the old "Main" level.
+* Configuration has been reworked substentially. Config files now interact with the settings menu, store various more information (especially sound), have more comments, and the app data name has been changed from "drhee/jelly" to "Lunarch Studios/Jelly is Sticky"
+* Audio volume has been hooked to reflect changes from config.
+* Added new jelly control flow to fully abort by dumping the state stack (to make "Quit game" button work in the menu).
+* Window is resized to fill most of the primary screen on first launch.
+* Error levels in demo shows different message.
+* Icon has been added to Windows build.
+* Version number text now shows platform information.
+* Shrunk the atlas size back to 4096.
+* The feature where tapping the "options" button 10 times to wipe the save file is disabled.
+* Release build process has been mostly automated (except for the Steam side of things).
+
+## v0.10.3
+January 27, 2021
+
+### Changes/Bug fixes
+* Demo world has been added.
+* Floor shader now also takes in roughness texture.
+* Floor texture doesn't have to be 10x10 tiles anymore. The size can be set in the dev tool.
+* Dev tools can now be disabled from the config file.
+* Default music volume was lowered.
+* Version number is now shown in the title screen.
+* Fixed a bug where resizing a level in the editor broke deco layer.
+* Fixed a bug where resizing a level in the editor sometimes broke the player position of the current state.
+
+## v0.10.2
+January 21, 2021
+
+### Changes/Bug fixes
+* Tiles now come in up to 8 different varieties. They can be rotated through by pressing F3, or be tried out in the editor by pressing SHIFT before painting floors. Serialization of the tile variety has not been implemented yet.
+* Power wire can now be placed under wall.
+* Music playback has been added to the game with a temporary music, in order to start iterating on it.
+* Environmental point lights' strength can be adjusted.
+* Fixed a bug where if a meta level was created, aa child level was created and edited, then it was playtested and came out to the first level, the game does not have a reasonable meta state to pop back to and thus often duplicated controllable jelly.
+* Fixed a bug where preview state was not refreshed when popping out from a child level while in the editor, thus rendering completely incorrect floors.
+
+## v0.10.1
+January 12, 2021
+
+### Changes/Bug fixes
+* Floor goals glow when they are met.
+* Specular geometry calculation has been corrected.
+* Shader color uniform hooks now support alpha.
+* Restored editor grid rendering.
+* Fixed a bug where resuming playing from editor sometimes spawned an extra smiley block.
+* Fixed occasional editor crash.
+
+### Known Issues
+* "Courtyard" preview is broken on release build.
+* Jiggle behavior is wrong/discontinuous when moving. This will be fixed soon.
+
 ## v0.10.0
 December 18, 2020
 

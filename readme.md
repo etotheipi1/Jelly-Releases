@@ -1,5 +1,7 @@
 # Jelly is Sticky Alpha Releases
 
+Starting from v0.10.1, builds will be distributed through Steam. Thanks for testing Jelly is Sticky.
+
 ## v0.10.0
 December 18, 2020
 
